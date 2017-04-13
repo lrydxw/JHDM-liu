@@ -1,0 +1,172 @@
+<!--
+  Generated template for the Liu page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>农变未</ion-title>
+    </ion-navbar>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="搜索" style="font-size:12px;"></ion-searchbar>
+<div>
+  <ion-segment [(ngModel)]="pet"  (ngModelChange)='Changed($event)' >
+    <ion-segment-button value="test1"    style="font-size:16px;">
+      所有
+    </ion-segment-button>
+    <ion-segment-button value="test2" style="font-size:16px;">
+      已举证
+    </ion-segment-button>
+    <ion-segment-button value="test3" style="font-size:16px;">
+      未举证
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+<div [ngSwitch]="pet">
+
+
+<div> 
+  <ion-list *ngSwitchCase="'test1'">
+    <ion-item *ngFor="let item of items; let i = index">
+  	  <ion-row>
+    <ion-col col-2 (click)="addXin()">
+      <button ion-button icon-left clear >
+        <ion-icon name="pin"></ion-icon>
+  
+      </button>
+    </ion-col>
+    <ion-col center col-6 (click)="addXin()">
+    
+        <h2>
+     			序号：{{ item.id }}
+      </h2>
+      <p>
+      	   图幅号：{{ item.number }}
+      </p>
+    
+    </ion-col>
+    <ion-col col-1>
+ 
+    </ion-col>
+    <ion-col col-3>
+    	
+      <button ion-button icon-left clear (click)="getData(item)">
+      	<div>详情&nbsp;|&nbsp;</div>
+        <ion-icon name="md-list-box"></ion-icon>
+        
+      </button>
+      
+    </ion-col>
+    
+  </ion-row>
+ </ion-item>
+
+  </ion-list>
+  </div>
+
+
+<div> 
+  <ion-list *ngSwitchCase="'test2'">
+    <ion-item *ngFor="let item of items1; let i = index">
+  	  <ion-row>
+    <ion-col col-2 (click)="addXin()">
+      <button ion-button icon-left clear >
+        <ion-icon name="pin"></ion-icon>
+  
+      </button>
+    </ion-col>
+    <ion-col center col-6 (click)="addXin()">
+    
+        <h2>
+     			序号：{{ item.id }}
+      </h2>
+      <p>
+      	   图幅号：{{ item.number }}
+      </p>
+    
+    </ion-col>
+    <ion-col col-1>
+    <button
+          ion-button
+          clear
+          small
+          
+         ><ion-icon name="md-checkmark" large></ion-icon></button>
+        
+    </ion-col>
+    <ion-col col-3>
+    	
+      <button ion-button icon-left clear (click)="getData(item)" >
+      	<div>详情&nbsp;|&nbsp;</div>
+        <ion-icon name="md-list-box"></ion-icon>
+        
+      </button>
+      
+    </ion-col>
+    
+  </ion-row>
+ </ion-item>
+
+  </ion-list>
+  </div>
+
+
+
+
+<div> 
+  <ion-list *ngSwitchCase="'test3'">
+    <ion-item *ngFor="let item of items2; let i = index">
+  	  <ion-row>
+    <ion-col col-2 (click)="addXin()">
+      <button ion-button icon-left clear >
+        <ion-icon name="pin"></ion-icon>
+  
+      </button>
+    </ion-col>
+    <ion-col center col-6 (click)="addXin()">
+    
+        <h2>
+     			序号：{{ item.id }}
+      </h2>
+      <p>
+      	   图幅号：{{ item.number }}
+      </p>
+    
+    </ion-col>
+    <ion-col col-1>
+   
+    </ion-col>
+    <ion-col col-3>
+    	
+      <button ion-button icon-left clear (click)="getData(item)">
+      	<div>详情&nbsp;|&nbsp;</div>
+        <ion-icon name="md-list-box"></ion-icon>
+        
+      </button>
+      
+    </ion-col>
+    
+  </ion-row>
+ </ion-item>
+
+  </ion-list>
+  </div>
+
+
+</div>
+
+
+</ion-list>
+
+
+
+</ion-content>
